@@ -1,4 +1,4 @@
-# FloodScout Deployment Guide
+# FloodScout Deployment Guid
 
 ## Prerequisites
 
@@ -29,16 +29,19 @@ Before deploying, ensure you have:
 #### Option B: Manual Deployment
 
 1. Install Vercel CLI:
+
 ```bash
 npm i -g vercel
 ```
 
 2. Login to Vercel:
+
 ```bash
 vercel login
 ```
 
 3. Deploy:
+
 ```bash
 vercel
 ```
@@ -56,11 +59,10 @@ vercel
 In your Vercel dashboard:
 
 1. Go to your project → **Settings** → **Environment Variables**
-
 2. Add the following variable:
 
-| Name | Value | Environment |
-|------|-------|-------------|
+| Name               | Value               | Environment                      |
+| ------------------ | ------------------- | -------------------------------- |
 | `GEMINI_API_KEY` | Your Gemini API key | Production, Preview, Development |
 
 3. Click **Save**
@@ -104,18 +106,22 @@ Or trigger a redeploy from the Vercel dashboard.
 ## Troubleshooting
 
 ### "AI service not configured" error
+
 - Ensure `GEMINI_API_KEY` is set in Vercel environment variables
 - Redeploy after adding the variable
 
 ### "Failed to upload image" error
+
 - Ensure Vercel Blob storage is enabled
 - Check that `BLOB_READ_WRITE_TOKEN` exists in environment variables
 
 ### 404 on API routes
+
 - Ensure all files are committed and pushed to Git
 - Check build logs in Vercel dashboard for errors
 
 ### Analysis timeout
+
 - Default timeout is 30 seconds (configured in vercel.json)
 - For slower connections, consider upgrading Vercel plan
 
@@ -124,26 +130,25 @@ Or trigger a redeploy from the Vercel dashboard.
 ### For Production Use:
 
 1. **Add Database**: Replace in-memory storage with Postgres (Neon/Supabase)
+
    - Store reports persistently
    - Enable report history and analytics
-
 2. **Add Caching**: Implement Redis for frequently accessed reports
-
 3. **Rate Limiting**: Add rate limiting middleware to prevent abuse
-
 4. **Image Optimization**: Add image compression before upload
-
 5. **Analytics**: Integrate Vercel Analytics for monitoring
 
 ## Environment-Specific Configuration
 
 ### Development
+
 ```bash
 # .env.local
 GEMINI_API_KEY=your_dev_api_key
 ```
 
 ### Production
+
 Set in Vercel dashboard as shown above.
 
 ## Monitoring
@@ -157,11 +162,13 @@ Monitor your deployment:
 ## Cost Considerations
 
 ### Vercel (Free Tier)
+
 - 100GB bandwidth/month
 - Serverless function executions: 100GB-hours
 - Usually sufficient for hackathons and demos
 
 ### Google Gemini
+
 - Free tier: 60 requests per minute
 - Check [current pricing](https://ai.google.dev/pricing)
 
@@ -197,4 +204,3 @@ For production use, consider:
 ---
 
 **Your FloodScout instance should now be live and ready to analyze flood damage!**
-

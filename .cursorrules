@@ -1,0 +1,41 @@
+# FloodScout Project Rules
+
+## Architecture
+- Next.js 14 with App Router
+- TypeScript strict mode
+- Tailwind CSS for styling
+- Serverless functions only
+
+## Code Style
+- Use functional components
+- Prefer async/await over promises
+- Use TypeScript types, avoid `any`
+- Keep components under 300 lines
+
+## File Organization
+- Pages in `app/` directory
+- API routes in `app/api/`
+- Shared types in `types/`
+- Utilities in `lib/`
+- Components in `components/`
+
+## Best Practices
+- Always validate user input
+- Handle errors gracefully
+- Show loading states
+- Mobile-first responsive design
+- Optimize images
+- Use semantic HTML
+
+## API Design
+- RESTful conventions
+- Proper HTTP status codes
+- JSON responses only
+- Error messages user-friendly
+
+## Security
+- Never expose API keys
+- Validate file uploads
+- Sanitize user input
+- Rate limit APIs
+

@@ -416,10 +416,10 @@ export default function AnalyzePage() {
           <div ref={resultsRef}>
             {/* Title */}
             <div className="mb-8 text-center">
-              <h2 className="text-4xl font-bold text-white mb-2">
+              <h2 className="text-4xl font-bold dark:text-white light:text-slate-900 mb-2">
                 Flood Damage Assessment Report
               </h2>
-              <p className="text-slate-400">
+              <p className="dark:text-slate-400 light:text-slate-600">
                 Generated on {new Date().toLocaleString()}
               </p>
               <button
@@ -432,16 +432,16 @@ export default function AnalyzePage() {
             </div>
 
             {/* Severity Overview */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 mb-6">
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 mb-6 light:bg-white/80 light:border-slate-200">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <h3 className="text-xl font-semibold dark:text-white light:text-slate-900 mb-2">
                     Severity Assessment
                   </h3>
                   <SeverityBadge severity={analysisResult.severity} />
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-slate-400 mb-1">
+                  <p className="text-sm dark:text-slate-400 light:text-slate-600 mb-1">
                     Confidence Score
                   </p>
                   <p className="text-2xl font-bold text-emerald-400">
@@ -449,29 +449,29 @@ export default function AnalyzePage() {
                   </p>
                 </div>
               </div>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="dark:text-slate-300 light:text-slate-700 leading-relaxed">
                 {analysisResult.summary}
               </p>
             </div>
 
             <div className="space-y-6 mb-6">
               {/* Image */}
-              <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-4">
-                <h3 className="font-semibold text-white mb-3">
+              <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-4 light:bg-white/80 light:border-slate-200">
+                <h3 className="font-semibold dark:text-white light:text-slate-900 mb-3">
                   Analyzed Image
                 </h3>
                 <img
                   src={analyzedImageUrl || preview || ""}
                   alt="Flood damage"
-                  className="w-full h-auto rounded-lg border border-slate-700"
+                  className="w-full h-auto rounded-lg border border-slate-700 light:border-slate-200"
                 />
               </div>
 
               {/* Main Content */}
               <div className="space-y-6">
                 {/* Structural Findings */}
-                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 light:bg-white/80 light:border-slate-200">
+                  <h3 className="text-xl font-semibold dark:text-white light:text-slate-900 mb-4 flex items-center">
                     <Home className="mr-2 h-5 w-5 text-emerald-400" />
                     Structural Findings
                   </h3>
@@ -485,8 +485,8 @@ export default function AnalyzePage() {
                 </div>
 
                 {/* Flood Indicators */}
-                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 light:bg-white/80 light:border-slate-200">
+                  <h3 className="text-xl font-semibold dark:text-white light:text-slate-900 mb-4">
                     Flood Indicators
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -532,8 +532,8 @@ export default function AnalyzePage() {
                 </div>
 
                 {/* Hazards */}
-                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 light:bg-white/80 light:border-slate-200">
+                  <h3 className="text-xl font-semibold dark:text-white light:text-slate-900 mb-4 flex items-center">
                     <AlertTriangle className="mr-2 h-5 w-5 text-orange-400" />
                     Identified Hazards
                   </h3>
@@ -555,27 +555,27 @@ export default function AnalyzePage() {
                 </div>
 
                 {/* Repair Estimates */}
-                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-xl backdrop-blur-sm shadow-lg p-6 light:bg-white/80 light:border-slate-200">
+                  <h3 className="text-xl font-semibold dark:text-white light:text-slate-900 mb-2">
                     Repair Cost Estimates
                   </h3>
-                  <p className="text-sm text-slate-400 mb-4 italic">
+                  <p className="text-sm dark:text-slate-400 light:text-slate-600 mb-4 italic">
                     Evidence-based heuristic estimates for repair materials
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-slate-700">
-                          <th className="text-left py-3 px-4 font-semibold text-white">
+                        <tr className="border-b border-slate-700 light:border-slate-200">
+                          <th className="text-left py-3 px-4 font-semibold dark:text-white light:text-slate-900">
                             Material
                           </th>
-                          <th className="text-left py-3 px-4 font-semibold text-white">
+                          <th className="text-left py-3 px-4 font-semibold dark:text-white light:text-slate-900">
                             Estimated Quantity
                           </th>
-                          <th className="text-left py-3 px-4 font-semibold text-white">
+                          <th className="text-left py-3 px-4 font-semibold dark:text-white light:text-slate-900">
                             Estimated Cost
                           </th>
-                          <th className="text-left py-3 px-4 font-semibold text-white">
+                          <th className="text-left py-3 px-4 font-semibold dark:text-white light:text-slate-900">
                             Notes
                           </th>
                         </tr>
@@ -586,10 +586,10 @@ export default function AnalyzePage() {
                             <RepairRow key={index} estimate={estimate} />
                           ),
                         )}
-                        <tr className="border-t-2 border-emerald-500/50 bg-slate-800/50">
+                        <tr className="border-t-2 border-emerald-500/50 bg-slate-800/50 light:bg-slate-50">
                           <td
                             colSpan={2}
-                            className="py-4 px-4 font-semibold text-white text-right"
+                            className="py-4 px-4 font-semibold dark:text-white light:text-slate-900 text-right"
                           >
                             Total Estimated Cost:
                           </td>
@@ -615,14 +615,14 @@ export default function AnalyzePage() {
                 </div>
 
                 {/* Disclaimer */}
-                <div className="bg-orange-900/20 border-2 border-orange-700/50 rounded-xl p-6">
+                <div className="bg-orange-900/20 border-2 border-orange-700/50 rounded-xl p-6 light:bg-orange-50 light:border-orange-200">
                   <div className="flex items-start">
-                    <AlertCircle className="h-6 w-6 text-orange-400 mr-3 flex-shrink-0 mt-0.5" />
+                    <AlertCircle className="h-6 w-6 text-orange-400 mr-3 flex-shrink-0 mt-0.5 light:text-orange-500" />
                     <div>
-                      <h4 className="font-semibold text-orange-200 mb-2">
+                      <h4 className="font-semibold dark:text-orange-200 light:text-orange-900 mb-2">
                         Important Disclaimer
                       </h4>
-                      <p className="text-orange-100 text-sm leading-relaxed">
+                      <p className="dark:text-orange-100 light:text-orange-800 text-sm leading-relaxed">
                         {analysisResult.disclaimer}
                       </p>
                     </div>
@@ -665,10 +665,26 @@ function SeverityBadge({ severity }: { severity: string }) {
 
 function StructuralCard({ finding }: { finding: StructuralFinding }) {
   const statusStyles = {
-    intact: "bg-emerald-50 border-emerald-200 text-emerald-900",
-    damaged: "bg-yellow-50 border-yellow-200 text-yellow-900",
-    critical: "bg-red-50 border-red-200 text-red-900",
-    unknown: "bg-slate-700 border-slate-600 text-slate-100",
+    intact: {
+      bg: "bg-emerald-50",
+      border: "border-emerald-200",
+      text: "text-emerald-900",
+    },
+    damaged: {
+      bg: "bg-yellow-50",
+      border: "border-yellow-200",
+      text: "text-yellow-900",
+    },
+    critical: {
+      bg: "bg-red-50",
+      border: "border-red-200",
+      text: "text-red-900",
+    },
+    unknown: {
+      bg: "dark:bg-slate-700 light:bg-slate-100",
+      border: "dark:border-slate-600 light:border-slate-200",
+      text: "dark:text-slate-100 light:text-slate-700",
+    },
   };
 
   const statusIcons = {
@@ -685,13 +701,11 @@ function StructuralCard({ finding }: { finding: StructuralFinding }) {
 
   const cardClassName = cardColors
     ? `border-2 rounded-lg p-4 ${cardColors.bg} ${cardColors.border}`
-    : `border-2 rounded-lg p-4 ${statusStyles[finding.status as keyof typeof statusStyles]}`;
+    : `border-2 rounded-lg p-4 ${statusStyles[finding.status as keyof typeof statusStyles].bg} ${statusStyles[finding.status as keyof typeof statusStyles].border}`;
 
   const textClassName = cardColors
     ? cardColors.text
-    : statusStyles[finding.status as keyof typeof statusStyles]
-        .split(" ")
-        .pop();
+    : statusStyles[finding.status as keyof typeof statusStyles].text;
 
   const beaconTone =
     finding.risk_level === "critical"
@@ -784,16 +798,24 @@ function IndicatorItem({
         className={`p-3 rounded-lg ${
           highlight
             ? "bg-emerald-50 border border-emerald-200"
-            : "bg-slate-700 border border-slate-600"
+            : "dark:bg-slate-700 dark:border-slate-600 light:bg-slate-100 light:border-slate-200"
         }`}
       >
         <p
-          className={`text-xs mb-1 ${highlight ? "text-emerald-600" : "text-slate-400"}`}
+          className={`text-xs mb-1 ${
+            highlight
+              ? "text-emerald-600"
+              : "dark:text-slate-400 light:text-slate-600"
+          }`}
         >
           {label}
         </p>
         <p
-          className={`font-semibold capitalize ${highlight ? "text-emerald-900" : "text-slate-100"}`}
+          className={`font-semibold capitalize ${
+            highlight
+              ? "text-emerald-900"
+              : "dark:text-slate-100 light:text-slate-900"
+          }`}
         >
           {value}
         </p>
@@ -806,15 +828,17 @@ function RepairRow({ estimate }: { estimate: RepairEstimate }) {
   const cost = estimateCost(estimate.material, estimate.estimated_quantity);
 
   return (
-    <tr className="border-b border-slate-700 hover:bg-slate-700/50">
-      <td className="py-3 px-4 font-medium text-white">{estimate.material}</td>
-      <td className="py-3 px-4 text-slate-200">
+    <tr className="border-b border-slate-700 hover:bg-slate-700/50 light:border-slate-200 light:hover:bg-slate-100">
+      <td className="py-3 px-4 font-medium dark:text-white light:text-slate-900">
+        {estimate.material}
+      </td>
+      <td className="py-3 px-4 dark:text-slate-200 light:text-slate-700">
         {estimate.estimated_quantity}
       </td>
       <td className="py-3 px-4 text-emerald-400 font-semibold">
         ${cost.toLocaleString()}
       </td>
-      <td className="py-3 px-4 text-sm text-slate-400">
+      <td className="py-3 px-4 text-sm dark:text-slate-400 light:text-slate-600">
         {estimate.notes || "—"}
       </td>
     </tr>

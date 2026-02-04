@@ -2,7 +2,7 @@ export interface StructuralFinding {
   component: string;
   status: "intact" | "damaged" | "critical" | "unknown";
   evidence: string;
-  risk_level?: "low" | "medium" | "high";
+  risk_level?: "low" | "medium" | "high" | "critical";
 }
 
 export interface FloodIndicator {

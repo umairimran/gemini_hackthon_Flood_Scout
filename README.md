@@ -1,6 +1,6 @@
 # FloodScout - AI-Powered Flood Damage Assessment
 
-FloodScout is a serverless Next.js application that uses Google Gemini AI to instantly analyze flood-damaged buildings from a single photograph. Get comprehensive structural insights, hazard detection, and repair cost estimates in under 10 seconds.
+FloodScout is a serverless Next.js application leveraging Google Gemini's multimodal capabilities for real-time image analysis. It provides immediate classification of flood damage, structural integrity assessment, and cost estimation, streamlining the recovery process with sub-10-second latency.
 
 ![FloodScout Banner](https://img.shields.io/badge/Next.js-14-black?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript) ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
 
